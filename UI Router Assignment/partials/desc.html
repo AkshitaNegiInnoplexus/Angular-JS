@@ -1,0 +1,274 @@
+			<div class="col-md-9  pad" ng-cloak>
+				<div class="panel panel-default " style=" margin:0px;">
+					<div class="panel-heading" style="height:65px;">
+						<span style="font-size:26px;">{{$ctrl.phonedetail.name}}</span>
+						<div class="pull-right">
+							<button class="btn btn-success btn-md" ui-sref="update" >Update</button>
+						</div>
+					</div>
+					<div class="panel-body" style="min-height:calc(100% - 140px);">
+						<div class="clearfix" style="margin-bottom:25px;">
+							<div class="col-md-4" align="center">
+								<img  class="img-responsive img-rounded img-thumbnail " ng-src="{{$ctrl.mainImageUrl}}" >
+							</div>
+							<div class="col-md-8" >
+								<br>
+								<p style="font-family: 'Slabo 27px', serif;font-weight:400;">{{$ctrl.phonedetail.description}}</p>
+								<div ng-repeat="img in $ctrl.phonedetail.images" style="margin-top:50px;" >
+									<div class="col-md-2 hidden-xs hidden-sm">
+										<img class="img-responsive img-thumbnail " ng-src="{{img}}" ng-click="$ctrl.setImage(img)">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="container-fluid" style="margin-bottom:25px;">
+						<div class="panel panel-default ">
+						  <div class="panel-body">
+						    <div class="table-responsive ">
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead>
+									 	<tr class="info">
+											<th class="rows"><b>Availability and Networks</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr >
+									 		<th>Availability</th>
+									 		<th><span ng-repeat="availability in $ctrl.phonedetail.availability">{{availability }}  </span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Battery</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>Type</th>
+									 		<th><span>{{$ctrl.phonedetail.battery.type }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Talk Time</th>
+									 		<th><span>{{$ctrl.phonedetail.battery.talkTime }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Stand ByTime</th>
+									 		<th><span>{{$ctrl.phonedetail.battery.standbyTime }}</span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Storage and Memory</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>RAM</th>
+									 		<th><span>{{$ctrl.phonedetail.storage.ram }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Internal Storage</th>
+									 		<th><span>{{$ctrl.phonedetail.storage.flash }}</span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Connectivity</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>Network Support</th>
+									 		<th><span> {{$ctrl.phonedetail.connectivity.cell }} </span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>WiFi</th>
+									 		<th><span>{{$ctrl.phonedetail.connectivity.wifi }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Bluetooth</th>
+									 		<th><span>{{$ctrl.phonedetail.connectivity.bluetooth }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Infrared</th>
+									 		<th><span>{{$ctrl.phonedetail.connectivity.infrared }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>GPS</th>
+									 		<th><span>{{$ctrl.phonedetail.connectivity.gps }}</span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Android</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>OS Version</th>
+									 		<th><span>{{$ctrl.phonedetail.android.os }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>UI</th>
+									 		<th><span>{{$ctrl.phonedetail.android.ui }}</span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Size and Weight</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>Dimensions</th>
+									 		<th><span ng-repeat="dim in $ctrl.phonedetail.sizeAndWeight.dimensions">{{dim}} </span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Weight</th>
+									 		<th><span>{{$ctrl.phonedetail.sizeAndWeight.weight }}</span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Display</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>Screen size</th>
+									 		<th><span>{{$ctrl.phonedetail.display.screenSize }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Screen resolution</th>
+									 		<th><span>{{$ctrl.phonedetail.display.screenResolution }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Touch screen</th>
+									 		<th><span>{{$ctrl.phonedetail.display.touchScreen }}</span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Hardware</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>CPU</th>
+									 		<th><span> {{$ctrl.phonedetail.hardware.cpu }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>USB</th>
+									 		<th><span>{{$ctrl.phonedetail.hardware.usb }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Audio / headphone jack</th>
+									 		<th><span>{{$ctrl.phonedetail.hardware.audioJack }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>FM Radio</th>
+									 		<th><span>{{$ctrl.phonedetail.hardware.fmRadio }}</span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Accelerometer</th>
+									 		<th><span>{{$ctrl.phonedetail.hardware.accelerometer }}</span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <colgroup>
+									 	 <col class="col-xs-3">
+									 	 <col class="col-xs-7">
+									 </colgroup>
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Camera</b></th>
+											<th></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>Primary</th>
+									 		<th><span>{{$ctrl.phonedetail.camera.primary }} </span></th>
+									 	</tr>
+									 	<tr>
+									 		<th>Features</th>
+									 		<th><span ng-repeat="cam in $ctrl.phonedetail.camera.features">{{cam }}</span></th>
+									 	</tr>
+									 </tbody>
+								</table>
+								<table class="table table-bordered ">
+									 <thead >
+									 	<tr class="info">
+											<th class="rows"><b>Additional Features</b></th>
+									 	</tr>
+									 </thead>
+									 <tbody >
+									 	<tr>
+									 		<th>{{$ctrl.phonedetail.additionalFeatures }} </th>
+									 	</tr>
+									 </tbody>
+								</table>
+							</div>
+						  </div>
+						</div>
+
+					</div>
+
+					</div>
+				</div>
+			</div>

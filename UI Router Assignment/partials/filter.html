@@ -1,0 +1,55 @@
+			<div class="col-md-3  pad" ng-cloak>
+				<div class="panel panel-default  mag">
+					<div class="panel-heading">
+						<div class="clearfix   pad mag" >
+							<div class="col-md-9" style="padding:5px;">
+								<div class="input-group">
+									<input type="text" class="form-control"  placeholder=" Search" aria-describedby="search" >
+							 		<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+								</div>
+
+							</div>
+							<div class="col-md-3" style="padding:5px;">
+								<button class="btn  btn-md add" ui-sref="add">Add</button>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body pad">
+					  <div class="panel panel-default mag">
+					    <div class="panel-heading" role="tab" id="headingOne">
+					      <h4 class="panel-title">
+					        <a role="button" data-toggle="collapse"  href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					        	Mobile Brands <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					      <div class="panel-body pad ">
+					      	<div class="list-group mag">
+					      		<a  type="button" class="list-group-item " ng-click="$ctrl.comp([],'All','')">All</a>
+					      	</div>
+					      	<div class="list-group mag" ng-repeat="phone in $ctrl.phones | unique:'company' ">
+								  <a  type="button" class="list-group-item " ng-click="$ctrl.comp(phone,phone.company,phone.id)" >{{phone.company}}</a>
+							</div>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="panel panel-default mag ">
+					    <div class="panel-heading" role="tab" id="headingTwo">
+					      <h4 class="panel-title">
+					        <a  role="button" data-toggle="collapse"  href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					        	Mobiles <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+					        </a>
+					      </h4>
+					    </div>
+					    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+					      <div class="panel-body pad mag">
+					      	<div class="list-group mag" style="padding-top:0px;" ng-repeat="phone in $ctrl.phoneList | filter: myfilter">
+								  <a  ng-click="addToCart(phone)"  class="list-group-item">{{phone.name}}</a>
+								</div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</div>

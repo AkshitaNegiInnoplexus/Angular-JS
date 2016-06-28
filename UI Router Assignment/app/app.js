@@ -1,0 +1,1 @@
+angular.module('myApp', ['ui.router','comp','angular.filter']);
