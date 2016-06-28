@@ -7,7 +7,6 @@ angular.module('comp')
 				self.setImage = function setImage(imageUrl) {
 			      self.mainImageUrl = imageUrl;
 			    };
-				console.log($stateParams);
 				$http.get("phones/"+$stateParams.id+".json").then(function(response){
 					self.phonedetail = response.data;
 					self.setImage(self.phonedetail.images[0]);

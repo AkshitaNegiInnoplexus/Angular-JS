@@ -28,11 +28,11 @@ angular.module('myApp')
 	    }
     })*/
     .state('add', {
-      url: "/home/mobile/add",
+      url: "/home/add",
       template: "<add-detail></add-detail>"
     })
     .state('update', {
-      url: "/home/mobile/update/:id",
+      url: "/home/update/:id",
       template: "<update-detail></update-detail>"
     });
 });
