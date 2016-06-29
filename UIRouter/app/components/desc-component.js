@@ -16,10 +16,10 @@ angular.module('comp')
 			$scope.totalItems={id:"motorola-xoom-with-wi-fi"};
 			  //subscribe items added callback
 			cartService.onItemsAdded(function(items){
-			    $scope.totalItems=items;
-			    console.log($scope.totalItems.id);
+			    $scope.totalItems=items["json"];
+			    console.log(items);
 					$state.go('home',{
-						company:$scope.totalItems.company,
+						company:items["comp"],
 						id:$scope.totalItems.id
 					},{
 						notify:false

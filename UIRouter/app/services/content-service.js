@@ -1,26 +1,28 @@
-angular.module('myApp')    
+angular.module('myApp')
         .factory("cartService",function(){
             var callbacks=[];
-            var items=0;
-    var addItemToCart=function(item){
-    items = item;
+            var items={};
+    var addItemToCart=function(comp,item){
+    items["json"]=item;
+    items["comp"]=comp;
+    console.log(items);
     //alert(item.id);
   //notify if there are any listeners
    var i=0;
    for(i=0; i<callbacks.length;i++)
     callbacks[i](items);
   }
-  
+
   //register listener
   var onItemsAdded=function(callback){
     callbacks.push(callback);
   }
-  
+
   return{
     onItemsAdded:onItemsAdded,
     addItemToCart:addItemToCart
   }
-  
+
 });
    /*.service('shareData', function() {
         return {
@@ -29,7 +31,7 @@ angular.module('myApp')
         }
          var shared_data;
         function setData(data) {
-            this.shared_data = data; 
+            this.shared_data = data;
         }
         function getData() {
             return this.shared_data;
@@ -70,5 +72,3 @@ angular.module('myApp')
     });
 
 */
-
-    

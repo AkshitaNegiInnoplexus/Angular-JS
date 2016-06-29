@@ -10,7 +10,7 @@ angular.module('comp')
 				$http.get('phones/phones.json').then(function(response){
 					self.phones=response.data;
 					//console.log(self.phones);
-					console.log($stateParams.company);
+					//console.log($stateParams.company);
 					if($stateParams.company != 'All')
 					{
 
@@ -43,12 +43,13 @@ angular.module('comp')
 		})*/
 
 			this.comp= function(phone,company,id){
-				console.log(company);
+			//	console.log(company);
 				self.phoneList=[];
 				if(company === 'All')
 				{
 					self.phoneList = self.phones;
 					phone = self.phones[0];
+
 				}
 				$state.go('home',{
 					company:company,
@@ -56,7 +57,7 @@ angular.module('comp')
 				},{
 					notify:false
 				})
-				cartService.addItemToCart(phone);
+				cartService.addItemToCart(company,phone);
 				for (var i = 0; i<self.phones.length; i++) {
 					if(company === self.phones[i].company){
 						self.phoneList.push(self.phones[i]);

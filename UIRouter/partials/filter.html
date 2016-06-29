@@ -4,7 +4,7 @@
 						<div class="clearfix   pad mag" >
 							<div class="col-md-9" style="padding:5px;">
 								<div class="input-group">
-									<input type="text" class="form-control"  placeholder=" Search" aria-describedby="search" >
+									<input type="text" class="form-control"  placeholder=" Search" ng-model = "$ctrl.query" aria-describedby="search" >
 							 		<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
 								</div>
 
@@ -29,7 +29,7 @@
 					      		<a  type="button" class="list-group-item " ng-click="$ctrl.comp([],'All','')">All</a>
 					      	</div>
 					      	<div class="list-group mag" ng-repeat="phone in $ctrl.phones | unique:'company' ">
-								  <a  type="button" class="list-group-item " ng-click="$ctrl.comp(phone,phone.company,phone.id)" >{{phone.company}}</a>
+								  <a type="button" class="list-group-item " ng-click="$ctrl.comp(phone,phone.company,phone.id)" >{{phone.company}}</a>
 							</div>
 					      </div>
 					    </div>
@@ -44,8 +44,8 @@
 					    </div>
 					    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 					      <div class="panel-body pad mag">
-					      	<div class="list-group mag" style="padding-top:0px;" ng-repeat="phone in $ctrl.phoneList | filter: myfilter">
-								  <a  ng-click="addToCart(phone)"  class="list-group-item">{{phone.name}}</a>
+					      	<div class="list-group mag" style="padding-top:0px;" ng-repeat="phone in $ctrl.phoneList | filter: $ctrl.query">
+								  <a  ng-click="addToCart(phone.company,phone)"  class="list-group-item">{{phone.name}}</a>
 								</div>
 					      </div>
 					    </div>

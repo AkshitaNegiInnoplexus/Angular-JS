@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <style type="text/css">
-    	
+
     	.pad{
     		padding:0px;
     	}
@@ -18,6 +18,9 @@
     	.mag{
     		margin:0px;
     	}
+			.list-group-item:focus{
+				background: red;
+			}
     </style>
 </head>
 <body>
@@ -53,12 +56,12 @@
 		  </div><!-- /.container-fluid -->
 		</nav>
 		<!-- End of navbar -->
-		
+
 		<!-- state one -->
 		<div class="clearfix" style="margin-top:70px; height:calc(100% - 70px);">
 			<div ui-view="filters"></div>
   			<div ui-view="desc"></div>
-  			<div ui-view ></div>	
+  			<div ui-view ></div>
 		</div>
 		<!-- end of state one -->
 
