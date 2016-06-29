@@ -4,7 +4,7 @@
 						<div class="clearfix   pad mag" >
 							<div class="col-md-9" style="padding:5px;">
 								<div class="input-group">
-									<input type="text" class="form-control"  placeholder=" Search" ng-model = "$ctrl.query" aria-describedby="search" >
+									<input type="text" class="form-control"  placeholder=" Search" ng-model = "search.name" aria-describedby="search" >
 							 		<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
 								</div>
 
@@ -44,7 +44,7 @@
 					    </div>
 					    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 					      <div class="panel-body pad mag">
-					      	<div class="list-group mag" style="padding-top:0px;" ng-repeat="phone in $ctrl.phoneList | filter: $ctrl.query">
+					      	<div class="list-group mag" style="padding-top:0px;" ng-repeat="phone in $ctrl.phoneList | filter: search">
 								  <a  ng-click="addToCart(phone.company,phone)"  class="list-group-item">{{phone.name}}</a>
 								</div>
 					      </div>
