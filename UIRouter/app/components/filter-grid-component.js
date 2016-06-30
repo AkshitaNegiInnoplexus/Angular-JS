@@ -31,20 +31,20 @@ angular.module('comp')
 
 			self.all="All";
 			$scope.cartItems=0;
+			$scope.activeBtn1=0;
 			$scope.addToCart=cartService.addItemToCart;
   			//subscribe items added callback
   			cartService.onItemsAdded(function(items){
     			$scope.cartItems=items;
+					$scope.activeBtn1 = items["index"];
   			});
 
-			/*$http.get('phones/phones.json').then(function(response){
-				self.phones=response.data;
-				console.log(self.phones.length);
-		})*/
-
-			this.comp= function(phone,company,id){
+			this.comp= function(phone,company,id,index){
 			//	console.log(company);
 				self.phoneList=[];
+				console.log("index"+index);
+				$scope.activeBtn = index;
+				$scope.activeBtn1 = 0;
 				if(company === 'All')
 				{
 					self.phoneList = self.phones;

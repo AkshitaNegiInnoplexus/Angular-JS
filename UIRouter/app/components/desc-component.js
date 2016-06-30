@@ -17,7 +17,8 @@ angular.module('comp')
 			  //subscribe items added callback
 			cartService.onItemsAdded(function(items){
 			    $scope.totalItems=items["json"];
-			    console.log(items);
+					$scope.activeBtn1 = items["index"];
+			    console.log("check" + items["index"]);
 					$state.go('home',{
 						company:items["comp"],
 						id:$scope.totalItems.id
